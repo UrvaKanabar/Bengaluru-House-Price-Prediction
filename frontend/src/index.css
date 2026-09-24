@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f8fafc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Theme 1: Midnight Emerald */
+.theme-midnight {
+  --bg-primary: #030712;
+}
+
+/* Theme 2: Sapphire Indigo */
+.theme-navy {
+  --bg-primary: #070d1e;
+}
+.theme-navy .glass-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Theme 3: Amber Luxury Onyx */
+.theme-royal {
+  --bg-primary: #0d0b0d;
+}
+.theme-royal .glass-card {
+  background: rgba(24, 20, 26, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* Theme 4: Polar Crisp Light */
+.theme-light {
+  --bg-primary: #f8fafc;
+}
+.theme-light body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.theme-light .glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+}
+.theme-light h1, .theme-light h2, .theme-light h3, .theme-light .text-white {
+  color: #0f172a !important;
+}
+.theme-light .text-slate-300, .theme-light .text-slate-400 {
+  color: #475569 !important;
+}
+.theme-light .bg-slate-950, .theme-light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  border-color: rgba(52, 211, 153, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.2);
+}
